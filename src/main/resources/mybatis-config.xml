@@ -5,7 +5,7 @@
 <configuration>
     <settings>
         <setting name="logImpl" value="LOG4J2"/>
-
+        <setting name="cacheEnabled" value="true"/>
     </settings>
     <!--是有顺序的需要注意下-->
     <typeAliases>

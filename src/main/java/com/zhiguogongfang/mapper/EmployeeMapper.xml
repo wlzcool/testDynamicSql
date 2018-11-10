@@ -3,6 +3,7 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.zhiguogongfang.mapper.EmployeeMapper">
+    <cache eviction="LRU" flushInterval="30000" size="512" readOnly="true"/>
     <select id="selectEmployeeByIdLike" resultType="Employee">
         select * from tb_employee where state='active'
         <if test="id !=null">
@@ -70,5 +71,11 @@
         </set>
         where id=#{id}
     </update>
+    <update id="updateEmployeeName" parameterType="Employee">
+        update tb_employee set
 
+                name=#{name}
+
+        where id=#{id}
+    </update>
 </mapper>
